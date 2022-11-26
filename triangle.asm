@@ -1,4 +1,14 @@
-				ADR R12,myStorage    ;
+				;ARMv7	assembly program to determine the type of triangle
+				;based	of the side lengths provided P, Q, R
+				;The		output can be seen in register R1 as follows
+				
+				;0		= not a valid triangle
+				;1		= isoceles triangle
+				;2		= equilateral triangle
+				;3		= right triangle
+				;4		= scalene triangle
+				
+				ADR		R12,myStorage    ;
 				SUB		SP,SP,#12
 				MOV		R5,#3        ; side P
 				STR		R5,[SP,#0]
@@ -9,7 +19,6 @@
 				BL		L5
 				STR		R1,[R12,#0]
 				B		Done                ;end
-				;		Your code goes here.
 				
 				
 				
